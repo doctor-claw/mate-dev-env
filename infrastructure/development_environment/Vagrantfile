@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   PERSISTENT_DATA_DRIVE_MOUNT_PATH = "/mnt/data"
   PERSISTENT_DATA_DRIVE_DEVICE = "/dev/sdc"
   PERSISTENT_DATA_DRIVE_FILE = 'persistentdata.vdi'
-  PERSISTENT_DATA_DRIVE_SIZE_IN_GIGABYTES = 1
+  PERSISTENT_DATA_DRIVE_SIZE_IN_GIGABYTES = 10
   VIRTUALBOX_INSTALL_PATH = 'C:\Program Files\Oracle\Virtualbox'
 
   if not File.exist?(PERSISTENT_DATA_DRIVE_FILE)
