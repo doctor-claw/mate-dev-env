@@ -23,19 +23,10 @@ Tested with Vagrant 2.2.10 and VirtualBox 6.0.14
 From a command prompt run
 `CreateDevEnvVM.bat`
 
-This will install VirtualBox Guest Additions if you don't already have it, and then it will begin provisioning the VM.
-When the VM is ready, the Ubuntu MATE login screen will be shown. The user **vagrant** has the password **vagrant*.*
-
 ## Linux
 
-From a shell, check whether the VirtualBox Guest Additions are already installed:
+From a shell, run
+`chmod +x ./CreateDevEnvVM.sh && ./CreateDevEnvVM.sh`
 
-`vagrant plugin list | grep vagrant-vbguest`
-
-If `vagrant-vbguest` is not found, install the Guest Additions:
-
-`vagrant plugin install vagrant-vbguest`
-
-When this is installed, the VM can be provisioned:
-
-`vagrant up`
+These scripts install VirtualBox Guest Additions if you don't already have it, and then will begin provisioning the VM.
+When the VM is ready, the Ubuntu MATE login screen will be shown. The user **vagrant** has the password **vagrant*.*
