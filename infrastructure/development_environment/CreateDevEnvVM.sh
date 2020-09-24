@@ -11,8 +11,13 @@ else echo "Cannot find virtualbox on PATH! Please ensure you have downloaded vir
 fi
 
 if vagrant plugin list|grep vbguest &> /dev/null
-then echo "vbguest plugin installed in vagrant. Environment looks good, launching...";
+then echo "vbguest plugin installed in vagrant.";
 else echo "vbguest plugin not found in vagrant. Installing..."; vagrant plugin install vagrant-vbguest;
+fi
+
+if vagrant plugin list|grep disksize &> /dev/null
+then echo "disksize plugin installed in vagrant.";
+else echo "disksize plugin not found in vagrant. Installing..."; vagrant plugin install vagrant-disksize;
 fi
 
 vagrant up
