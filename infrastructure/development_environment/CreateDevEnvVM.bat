@@ -1,7 +1,7 @@
-vagrant plugin list > tmpFile 
-set /p installedVagrantPlugins= < tmpFile 
+@echo off
+vagrant plugin list > installedVagrantPlugins 
 
-ECHO.%installedVagrantPlugins% | FIND /I "vagrant-vbguest">Nul && ( Echo.Guest additions plugin installed already ) || ( vagrant plugin install vagrant-vbguest )
-ECHO.%installedVagrantPlugins% | FIND /I "vagrant-disksize">Nul && ( Echo.Disk size plugin installed already ) || ( vagrant plugin install vagrant-disksize )
+type installedVagrantPlugins | FIND /I "vagrant-vbguest">Nul && ( Echo.Guest additions plugin installed already ) || ( vagrant plugin install vagrant-vbguest )
+type installedVagrantPlugins | FIND /I "vagrant-disksize">Nul && ( Echo.Disk size plugin installed already ) || ( vagrant plugin install vagrant-disksize )
 
 vagrant up
